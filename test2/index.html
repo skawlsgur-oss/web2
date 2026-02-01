@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA - The Future of Footwear</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">AURA</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>Step Into <br><span class="highlight">The Future.</span></h1>
+                    <p>혁신적인 쿠셔닝과 미래지향적인 디자인의 만남. AURA와 함께 당신의 걸음을 재정의하세요.</p>
+
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+                        onload="if(typeof sent!=='undefined'){window.onFormSubmit()}"></iframe>
+
+                    <form class="email-form" id="notify-form"
+                        action="https://script.google.com/macros/s/AKfycbxXSd6eYeK5nhKj2nK8Q27VKE3z73iUOD6AZDJurh1IjdQ90whzpz7-f3i2snAt8rXk/exec"
+                        method="POST" target="hidden_iframe">
+                        <input type="email" name="email" placeholder="이메일 주소를 입력하세요" required>
+                        <button type="submit" id="submit-btn" onclick="window.sent=true">알림 받기</button>
+                    </form>
+
+                    <div id="form-message" style="margin-top: 20px; color: var(--accent-color); display: none;">
+                        감사합니다! 출시 소식을 가장 먼저 보내드리겠습니다.
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/sneaker.png" alt="AURA Sneaker">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why AURA?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Ultra Light</h3>
+                    <p>무게를 거의 느끼지 못할 정도의 초경량 소재를 사용하여 하루 종일 편안함을 유지합니다.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>AI Guided</h3>
+                    <p>발의 압력을 분석하여 최적의 지지력을 제공하는 스마트 인솔 시스템이 탑재되었습니다.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Eco-Logic</h3>
+                    <p>100% 재활용 가능한 친환경 소재를 사용하여 환경을 생각하는 혁신을 담았습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // 전송 완료 후 UI 처리를 위한 함수
+        window.onFormSubmit = function () {
+            if (window.sent) {
+                document.getElementById('notify-form').style.display = 'none';
+                document.getElementById('form-message').style.display = 'block';
+                console.log('구글 시트로 전송이 완료되었습니다.');
+            }
+        };
+    </script>
+</body>
+
+</html>
